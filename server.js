@@ -21,6 +21,7 @@ db.connect((err) => {
 });
 
 
+// API to get all the data from the database
 app.get('/', (req, res) => {
     res.send('API is running in port 5000');
 });

@@ -1,0 +1,5 @@
+Step 1: Initiate a nodejs server.
+    cmd: npm Init 
+
+Step 2: Install some important dependencies.
+    cmd: npm install mysql express nodemon dotenv cors body-parser ejs

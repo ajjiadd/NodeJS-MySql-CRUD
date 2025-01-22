@@ -12,3 +12,5 @@ Step 4: Run the first API.
 Step 5: Create database on localhost (like XAMPP)
 Step 6: Connect to the database using the ./config/db.js file.
 Step 7: Create .env file
+Step 8: Create Pages (e.g create.html)
+Step 9: Create API for the pages

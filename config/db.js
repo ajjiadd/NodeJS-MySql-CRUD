@@ -1,14 +1,14 @@
 const mysql = require('mysql');
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config(); //This call-Function use for the .env file
 
 
 // connect with database (XAMPP)
 const connection = mysql.createConnection({
-host: 'localhost',
-user: 'root',
-password: '',
-database: 'nodejscrud'
+host: process.env.HOST,
+user: process.env.USER,
+password: process.env.PASSWORD,
+database: process.env.DATABASE,
 });
 
 // handle the error 
@@ -19,3 +19,6 @@ connection.connect((err) => {
     }
     console.log('Connected Successfully to the database');
 });
+
+
+module.exports = connection; // export the connection to use in other files

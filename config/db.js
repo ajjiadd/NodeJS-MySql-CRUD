@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 
 // connect with database (XAMPP)
-const db = mysql.createConnection({
+const connection = mysql.createConnection({
 host: 'localhost',
 user: 'root',
 password: '',
@@ -10,7 +10,7 @@ database: 'nodejscrud'
 });
 
 // handle the error 
-db.connect((err) => {
+connection.connect((err) => {
     // if (err) throw err; or
     if(err){
         throw err;

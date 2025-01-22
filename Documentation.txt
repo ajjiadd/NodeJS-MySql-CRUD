@@ -10,4 +10,5 @@ Step 4: Run the first API.
     cmd: npm start  //for nodemon
 
 Step 5: Create database on localhost (like XAMPP)
-Step 6: Connect to the database using the server.js file.
+Step 6: Connect to the database using the ./config/db.js file.
+Step 7: Create .env file

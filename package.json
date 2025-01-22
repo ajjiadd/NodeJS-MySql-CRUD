@@ -4,6 +4,7 @@
   "description": "Full-Stack CRUD Operation using Node.js and MySql",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "AJ Jiad",

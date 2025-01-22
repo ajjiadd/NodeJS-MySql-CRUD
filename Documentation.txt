@@ -3,3 +3,5 @@ Step 1: Initiate a nodejs server.
 
 Step 2: Install some important dependencies.
     cmd: npm install mysql express nodemon dotenv cors body-parser ejs
+
+Step 3: Create a server.js file.

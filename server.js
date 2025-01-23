@@ -13,6 +13,7 @@ const connection = require("./config/db");
 
 // Serve static files (e.g., HTML, CSS, JS, images) from the public folder.
 app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/views"));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,7 +36,8 @@ app.get("/data", (req, res) => {
         if (error) {
         console.log(error);
         } else {
-        res.send({rows});
+        // res.send({rows}); [use for testing]
+        res.render("read.ejs", { rows });
         }
     });
 });

@@ -43,6 +43,19 @@ app.get("/", (req, res) => {
      });
  });
 
+// Update Operation (Update data in the database)
+app.get("/update-data", (req, res) => {
+    connection.query("SELECT * FROM userinfo WHERE id = ?", [req.query.id], (error, eachRow) => {
+        if (error) {
+        console.log(error);
+        } else {
+            result = JSON.parse(JSON.stringify(eachRow[0]));
+            console.log(result);
+            res.render("update.ejs", { result });
+        }
+    });
+});
+
 
 // Read Operation (Fetch data from the database)
 app.get("/data", (req, res) => {
@@ -56,6 +69,31 @@ app.get("/data", (req, res) => {
     });
 });
 
+// Update Operation (Update data in the database)
+app.post("/final-update", (req, res) => {
+    // console.log(req.body);
+    const id = req.body.hidden_id;
+    const name = req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const occupation = req.body.occupation;
+    try {
+      connection.query(
+        "UPDATE userinfo SET name = ?, email = ?, phone = ?, occupation = ? WHERE id = ?",
+        [name, email, phone, occupation, id],
+        (error, rows) => {
+          if (error) {
+            console.log(error);
+          } else {
+              //this code use for redirect the page after the data insert
+            res.redirect("/data");
+          }
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
 // Create Operation (Insert data into the database)
 app.post("/create.html", (req, res) => {

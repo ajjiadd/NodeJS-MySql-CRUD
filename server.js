@@ -35,7 +35,7 @@ app.get("/data", (req, res) => {
         if (error) {
         console.log(error);
         } else {
-        res.send(rows);
+        res.send({rows});
         }
     });
 });

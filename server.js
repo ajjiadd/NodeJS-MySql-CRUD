@@ -4,12 +4,19 @@ const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 
 dotenv.config();
+
+// Set the view engine to ejs
+app.set("view engine", "ejs");
+
 //initialize the connection from ./config/db.js
 const connection = require("./config/db");
+
 // Serve static files (e.g., HTML, CSS, JS, images) from the public folder.
 app.use(express.static(__dirname + "/public"));
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+
 // parse application/json
 app.use(bodyParser.json());
 

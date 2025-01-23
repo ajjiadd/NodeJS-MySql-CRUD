@@ -1,11 +1,17 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+
 dotenv.config();
 //initialize the connection from ./config/db.js
 const connection = require('./config/db');
 // Serve static files (e.g., HTML, CSS, JS, images) from the public folder.
 app.use(express.static(__dirname + "/public"));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+// parse application/json
+app.use(bodyParser.json());
 
 
 // API to get all the data from the database

@@ -21,24 +21,32 @@
 
     <div class="row mx-2">
 
+     <% if(rows.length === 0){ %>
+        <h1 class="text-center mt-3 text-danger">No Data Found</h1>
 
-      <% rows.map((eachData)=>{ %>
-        <!-- <div class="col-md-4 mx-2"> -->
+    <%  }else{ %>
 
-          <div class="card mt-3 mx-2" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title"> <%- eachData.name %> </h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary"><%- eachData.email %></h6>
-              <p class="card-text"><%- eachData.phone %></p>
-              <p class="card-text"><%- eachData.occupation %></p>
-              <a href="#" class="card-link">Update</a>
-              <a href="#" class="card-link">Delete</a>
+        <% rows.map((eachData)=>{ %>
+          <!-- <div class="col-md-4 mx-2"> -->
+  
+            <div class="card mt-3 mx-2" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"> <%- eachData.name %> </h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary"><%- eachData.email %></h6>
+                <p class="card-text"><%- eachData.phone %></p>
+                <p class="card-text"><%- eachData.occupation %></p>
+                <a href="#" class="card-link">Update</a>
+                <a href="" class="card-link">Delete</a>
+              </div>
             </div>
-          </div>
+  
+          <!-- </div> -->
+  
+          <% }) %>
 
-        <!-- </div> -->
+     <% } %>
 
-        <% }) %>
+      
 
     </div>
 

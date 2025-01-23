@@ -13,6 +13,17 @@ app.get('/', (req, res) => {
     res.redirect('/create.html'); 
 });
 
+// Create Operation (Insert data into the database)
+app.post('/create', (req, res) => {
+    try {
+        console.log('Create Operation');
+        
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
 app.listen(process.env.PORT || 4000, (error) => {
     //longer version
      if (error) {

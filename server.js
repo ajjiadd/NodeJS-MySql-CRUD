@@ -30,6 +30,20 @@ app.get("/", (req, res) => {
   res.redirect("/create.html");
 });
 
+// Delete Operation (Delete data from the database)
+ app.get("/delete-data", (req, res) => {
+     const deleteQuery = "DELETE FROM userinfo WHERE id = ?";
+
+     connection.query(deleteQuery, [req.query.id], (error, rows) => {
+         if (error) {
+         console.log(error);
+         } else {
+         res.redirect("/data");
+         }
+     });
+ });
+
+
 // Read Operation (Fetch data from the database)
 app.get("/data", (req, res) => {
     connection.query("SELECT * FROM userinfo", (error, rows) => {
@@ -67,6 +81,8 @@ app.post("/create.html", (req, res) => {
     console.log(error);
   }
 });
+
+
 
 app.listen(process.env.PORT || 4000, (error) => {
   //longer version

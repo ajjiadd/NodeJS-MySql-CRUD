@@ -20,10 +20,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-// API to get all the data from the database
+
+
+
+
+// API for default page
 app.get("/", (req, res) => {
   res.redirect("/create.html");
 });
+
+// Read Operation (Fetch data from the database)
+app.get("/data", (req, res) => {
+    connection.query("SELECT * FROM userinfo", (error, rows) => {
+        if (error) {
+        console.log(error);
+        } else {
+        res.send(rows);
+        }
+    });
+});
+
 
 // Create Operation (Insert data into the database)
 app.post("/create.html", (req, res) => {
@@ -40,7 +56,8 @@ app.post("/create.html", (req, res) => {
         if (error) {
           console.log(error);
         } else {
-          res.send(rows);
+            //this code use for redirect the page after the data insert
+          res.redirect("/data");
         }
       }
     );

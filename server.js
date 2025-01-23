@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 
 // Create Operation (Insert data into the database)
 app.post('/create', (req, res) => {
+    console.log(req.body);
     try {
         console.log('Create Operation');
         

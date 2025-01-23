@@ -12,20 +12,20 @@
     <form action="http://localhost:3000/create" method="POST">
         <div class="mb-3">
             <label for="Name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="mb-3">
           <label for="Email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
           <label for="phone" class="form-label">Password</label>
-          <input type="number" class="form-control" id="phone">
+          <input type="number" class="form-control" id="phone" name="phone">
         </div>
         <div class="mb-3">
             <label for="Occupation" class="form-label">Occupation</label>
-            <input type="text" class="form-control" id="occupation">
+            <input type="text" class="form-control" id="occupation" name="occupation">  
         </div>
         
         <button type="submit" class="btn btn-primary">Submit</button>

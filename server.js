@@ -96,7 +96,7 @@ app.post("/final-update", (req, res) => {
   });
 
 // Create Operation (Insert data into the database)
-app.post("/create.html", (req, res) => {
+app.post("/create", (req, res) => {
   // console.log(req.body);
   const name = req.body.name;
   const email = req.body.email;
